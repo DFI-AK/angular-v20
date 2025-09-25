@@ -5,7 +5,7 @@ on:
     branches:
       - master
   pull_request:
-    types: [opened, synchronize, reopened, closed]
+    types: [ opened, synchronize, reopened, closed ]
     branches:
       - master
 
@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
+      - name: Setup nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.19'
       - uses: actions/checkout@v3
         with:
           submodules: true
@@ -44,3 +48,4 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLACK_ISLAND_0EA0B8B00 }}
           action: "close"
+          app_location: ''
