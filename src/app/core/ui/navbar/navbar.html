@@ -1,7 +1,10 @@
 <div class="w-full h-full relative">
-  <router-outlet/>
-  <nav class="w-full h-[80px] fixed bottom-0 bg-white">
-    <ul class="flex items-center gap-x-8 w-full h-full">
+  <div class="w-full px-[16px]">
+    <router-outlet/>
+  </div>
+
+  <nav class="w-full h-[80px] sticky bottom-0 bg-white shadow-(--shadow) px-[12px]">
+    <ul class="flex items-center justify-around gap-x-8 w-full h-full">
       @for (link of menu(); track link.label) {
         <li>
           <p-button [label]="link.label" [routerLink]="link.routerLink" [icon]="link.icon" iconPos="top" text
