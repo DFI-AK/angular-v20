@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {Avatar} from 'primeng/avatar';
 import {Divider} from 'primeng/divider';
 import {ButtonDirective, ButtonIcon} from 'primeng/button';
 import {RouterLink} from '@angular/router';
+import {UserStore} from '../../core/services/user-store';
 
 @Component({
   selector: 'app-manage-account',
@@ -17,5 +18,9 @@ import {RouterLink} from '@angular/router';
   styleUrl: './manage-account.scss'
 })
 export class ManageAccount {
+  private userStore = inject(UserStore)
 
+  protected logout() {
+    this.userStore.logout()
+  }
 }
