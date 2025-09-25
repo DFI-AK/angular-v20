@@ -1,0 +1,88 @@
+<div class="h-full w-full pt-[16px]">
+  <div class="w-full mb-4">
+    <p class="text-sm text-slate-500 mb-[6px]">Find your place in</p>
+    <div class="w-full flex items-center gap-x-2">
+      <i class="pi pi-map-marker text-primary"></i>
+      <p class="text-xl font-semibold">Punjab</p>
+    </div>
+  </div>
+
+  <app-searchbar [enableFilterButton]="true" (searchEvent)="onSearch($event)"
+                 placeholder="Search address, city, location"/>
+
+  <div class="w-full pb-11">
+    <h4 class="text-lg font-semibold mb-[20px]">What do you need?</h4>
+    <p-tabs value="room">
+      <p-tablist class="w-full text-center mb-[36px]">
+        <p-tab class="w-1/2" value="room">I need room</p-tab>
+        <p-tab class="w-1/2" value="pg">I need PG</p-tab>
+      </p-tablist>
+      <p-tabpanels class="p-0!">
+        <p-tabpanel value="room">
+          <div class="mb-11 w-full">
+            <div class="mb-8">
+              <h4 class="text-lg font-semibold mb-0.5">Near your location</h4>
+              <div class="flex justify-between items-center">
+                <p class="text-sm text-slate-500">100+ rooms in Punjab</p>
+                <a routerLink="rooms" class="text-primary text-sm">See all</a>
+              </div>
+            </div>
+            <p-carousel [value]="rooms()" [numVisible]="3" [numScroll]="3" [circular]="false"
+                        [responsiveOptions]="responsiveOptions" [showNavigators]="false">
+              <ng-template let-property #item>
+                <app-room-card [room]="property"/>
+              </ng-template>
+            </p-carousel>
+          </div>
+
+          <div class="mb-11">
+            <div class="mb-8 flex justify-between items-center">
+              <h4 class="text-lg font-semibold mb-0.5">Top rated in Mohali</h4>
+              <a routerLink="rooms" class="text-primary text-sm">See all</a>
+            </div>
+
+            <p-carousel [value]="rooms()" [numVisible]="3" [numScroll]="3" [circular]="false"
+                        [responsiveOptions]="responsiveOptions" [showNavigators]="false">
+              <ng-template let-property #item>
+                <app-room-card [room]="property"/>
+              </ng-template>
+            </p-carousel>
+          </div>
+        </p-tabpanel>
+
+        <p-tabpanel value="pg">
+          <div class="mb-11 w-full">
+            <div class="mb-8">
+              <h4 class="text-lg font-semibold mb-0.5">Near your location</h4>
+              <div class="flex justify-between items-center">
+                <p class="text-sm text-slate-500">100+ PG in Punjab</p>
+                <a routerLink="rooms" class="text-primary text-sm">See all</a>
+              </div>
+            </div>
+            <p-carousel [value]="rooms()" [numVisible]="3" [numScroll]="3" [circular]="false"
+                        [responsiveOptions]="responsiveOptions" [showNavigators]="false">
+              <ng-template let-property #item>
+                <app-room-card [room]="property"/>
+              </ng-template>
+            </p-carousel>
+          </div>
+
+          <div class="mb-11">
+            <div class="mb-8 flex justify-between items-center">
+              <h4 class="text-lg font-semibold mb-0.5">Top rated in Mohali</h4>
+              <a routerLink="rooms" class="text-primary text-sm">See all</a>
+            </div>
+
+            <p-carousel [value]="rooms()" [numVisible]="3" [numScroll]="3" [circular]="false"
+                        [responsiveOptions]="responsiveOptions" [showNavigators]="false">
+              <ng-template let-property #item>
+                <app-room-card [room]="property"/>
+              </ng-template>
+            </p-carousel>
+          </div>
+        </p-tabpanel>
+      </p-tabpanels>
+    </p-tabs>
+  </div>
+  <p></p>
+</div>

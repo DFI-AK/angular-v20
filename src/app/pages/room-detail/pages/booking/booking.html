@@ -1,0 +1,16 @@
+<div class="w-full h-full py-[16px]">
+  <div class="w-full flex flex-row justify-between items-center mb-6">
+    <div class="flex flex-row gap-x-2 items-center">
+      <a routerLink="/app/room/{{room().id}}" pButton text [rounded]="true" severity="secondary">
+        <i class="pi pi-chevron-left" pButtonIcon></i>
+      </a>
+      <span class="font-semibold text-lg" pButtonIcon>Rent booking</span>
+    </div>
+    <a routerLink="/app/help" pButton text [rounded]="true" severity="secondary">
+      <span class="material-symbols-outlined">live_help</span>
+    </a>
+  </div>
+  <div class="w-full shadow-2xl shadow-slate-400/35 rounded-[10px] w-full">
+    <app-room-card [room]="room()"/>
+  </div>
+</div>

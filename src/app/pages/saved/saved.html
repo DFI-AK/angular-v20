@@ -1,0 +1,11 @@
+<div class="w-full h-full py-[16px]">
+  <app-searchbar placeholder="Search saved properties" (searchEvent)="onSearch($event)" #search/>
+
+  @for (room of filteredRooms(); track room.title) {
+    <div class="mb-[36px] shadow-2xl shadow-slate-400/35 rounded-[10px] w-full">
+      <app-room-card [room]="room"/>
+    </div>
+  } @empty {
+    <p class="text-slate-500">No saved rooms found for <strong>{{ search.searchResult }}</strong></p>
+  }
+</div>

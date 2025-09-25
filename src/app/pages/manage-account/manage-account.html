@@ -1,0 +1,86 @@
+<div class="h-full w-full">
+  <div class="flex flex-col gap-y-1 items-center pt-[64px] mb-11">
+    <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+              class="mb-2 w-[80px]! h-[80px]!"
+              shape="circle"/>
+    <p class="text-xl font-semibold">John Cena</p>
+    <p class="text-slate-500">{{ 'john.cena@demo.com' }}</p>
+  </div>
+  <p-divider class="mb-11!"/>
+
+  <ul class="mb-[28px]">
+    <li class="flex items-center justify-between cursor-pointer mb-[24px]" routerLink="/personal-details">
+      <div class="flex items-center gap-x-2">
+        <button type="button" pButton text [raised]="true" class="w-[40px] h-[40px]! rounded-lg! shadow-lg!"
+                severity="contrast">
+          <i class="pi pi-user" pButtonIcon></i>
+        </button>
+        <a>Personal details</a>
+      </div>
+      <button type="button" pButton text severity="secondary">
+        <i class="pi pi-chevron-right"></i>
+      </button>
+    </li>
+
+    <li class="flex items-center justify-between cursor-pointer mb-[24px]" routerLink="/personal-details">
+      <div class="flex items-center gap-x-2">
+        <button type="button" pButton text [raised]="true" class="w-[40px] h-[40px]! rounded-lg! shadow-lg!"
+                severity="contrast">
+          <i class="pi pi-cog" pButtonIcon></i>
+        </button>
+        <a>Settings</a>
+      </div>
+      <button type="button" pButton text severity="secondary">
+        <i class="pi pi-chevron-right"></i>
+      </button>
+    </li>
+
+    <li class="flex items-center justify-between cursor-pointer mb-[24px]" routerLink="/personal-details">
+      <div class="flex items-center gap-x-2">
+        <button type="button" pButton text [raised]="true" class="w-[40px] h-[40px]! rounded-lg! shadow-lg!"
+                severity="contrast">
+          <i class="pi pi-credit-card" pButtonIcon></i>
+        </button>
+        <a>Payment details</a>
+      </div>
+      <button type="button" pButton text severity="secondary">
+        <i class="pi pi-chevron-right"></i>
+      </button>
+    </li>
+
+    <li class="flex items-center justify-between cursor-pointer" routerLink="/personal-details">
+      <div class="flex items-center gap-x-2">
+        <button type="button" pButton text [raised]="true" class="w-[40px] h-[40px]! rounded-lg! shadow-lg!"
+                severity="contrast">
+          <i class="pi pi-comment" pButtonIcon></i>
+        </button>
+        <a>FAQ</a>
+      </div>
+      <button type="button" pButton text severity="secondary">
+        <i class="pi pi-chevron-right"></i>
+      </button>
+    </li>
+
+    <p-divider class="my-[28px]!"/>
+
+    <li class="flex items-center justify-between cursor-pointer mb-[28px]!" routerLink="/personal-details">
+      <div class="flex items-center gap-x-2">
+        <button type="button" pButton text [raised]="true" class="w-[40px] h-[40px]! rounded-lg! shadow-lg!"
+                severity="contrast">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+               class="lucide lucide-toggle-right-icon lucide-toggle-right">
+            <circle cx="15" cy="12" r="3"/>
+            <rect width="20" height="14" x="2" y="5" rx="7"/>
+          </svg>
+        </button>
+        <a>Switch to hosting</a>
+      </div>
+      <button type="button" pButton text severity="secondary">
+        <i class="pi pi-chevron-right"></i>
+      </button>
+    </li>
+
+  </ul>
+
+</div>

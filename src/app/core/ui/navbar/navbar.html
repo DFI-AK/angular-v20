@@ -1,0 +1,15 @@
+<div class="w-full h-full relative">
+  <router-outlet/>
+  <nav class="w-full h-[80px] fixed bottom-0 bg-white">
+    <ul class="flex items-center gap-x-8 w-full h-full">
+      @for (link of menu(); track link.label) {
+        <li>
+          <p-button [label]="link.label" [routerLink]="link.routerLink" [icon]="link.icon" iconPos="top" text
+                    size="small" routerLinkActive #rla="routerLinkActive"
+                    [routerLinkActiveOptions]="link.routerLinkActiveOptions"
+                    [severity]="rla.isActive ? 'primary' : 'secondary'"/>
+        </li>
+      }
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,9 @@
+<div class="w-full h-full relative">
+  <router-outlet/>
+  <div class="fixed bottom-0 left-[calc(50%-0.5rem)]">
+    <p-speeddial [radius]="80" [model]="speedDial()" type="semi-circle" direction="up"
+                 [style]="{ position: 'absolute', left: 'calc(50% - 0.5rem)', bottom: '1rem' }" [transitionDelay]="50"
+                 mask [buttonProps]="{ rounded: true,size: 'large' }"
+                 [tooltipOptions]="{ tooltipPosition: 'top' }"/>
+  </div>
+</div>

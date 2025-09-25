@@ -1,0 +1,8 @@
+<p-icon-field class="mb-[36px]">
+  <p-inputicon class="pi pi-search"/>
+  <input type="search" id="search" pInputText class="w-full rounded-full! focus-within:bg-primary-50!"
+         [placeholder]="placeholder()" #input (keyup)="onChange(input.value)">
+  @if (isFilterButton()) {
+    <p-inputicon class="pi pi-sliders-v hover:cursor-pointer"/>
+  }
+</p-icon-field>

@@ -1,0 +1,61 @@
+<section class="w-full h-full">
+  <div class="h-[56px] w-full flex justify-start items-center py-[15px] mb-[16px]">
+    <button type="button" pButtonIcon class="hover:cursor-pointer" routerLink="/app">
+      <i class="pi pi-chevron-left text-slate-700"></i>
+    </button>
+  </div>
+  <div class="w-full mb-[40px]">
+    <h4 class="font-semibold text-2xl">Let’s explore together!</h4>
+    <p class="text-slate-500 text-sm">Create your Placoo account to explore your dream place to live across the whole
+      world!</p>
+  </div>
+
+  <form>
+    <div class="flex flex-col gap-2 rounded-full mb-[18px]">
+      <label for="email" class="text-[16px] text-slate-700">Email address</label>
+      <p-iconfield>
+        <p-inputicon class="pi pi-user"/>
+        <input type="email" pInputText id="email"
+               class="w-full rounded-full! focus-within:bg-primary-50! bg-stone-50!" pSize="large"
+               placeholder="Email address"/>
+      </p-iconfield>
+    </div>
+
+    <div class="flex flex-col gap-2 rounded-full mb-[18px]">
+      <label for="password" class="text-[16px] text-slate-700">Password</label>
+      <p-iconfield>
+        <p-inputicon class="pi pi-key"/>
+        <input type="password" pInputText id="password"
+               class="w-full rounded-full! focus-within:bg-primary-50! bg-stone-50!" pSize="large" placeholder="Password"/>
+      </p-iconfield>
+    </div>
+
+    <div class="w-full mb-[42px] mt-[28px] mb-[42px] flex justify-center items-center flex-col">
+      <button type="submit" pButton size="large"
+              class="w-full rounded-full! hover:shadow-lg hover:shadow-primary/75 mb-[12px]">
+        Login
+      </button>
+    </div>
+    <div class="flex flex-row items-center mb-[42px]">
+      <p-divider class="flex-1"/>
+      <p
+        class="w-[47px] h-[26px] bg-primary-100 rounded-md text-sm uppercase text-[#9E91DA] flex justify-center items-center">
+        or</p>
+      <p-divider class="flex-1"/>
+    </div>
+
+    <div class="flex flex-col gap-x-0 gap-y-4">
+      <button type="button" pButton class="w-full rounded-full! bg-slate-900! border-none!" size="large">
+        <i class="pi pi-apple"></i>
+        <span>Sign in with Apple</span>
+      </button>
+
+      <button type="button" pButton class="w-full rounded-full! bg-slate-100! border-none! text-slate-900!"
+              size="large">
+        <i class="pi pi-google"></i>
+        <span>Sign in with Google</span>
+      </button>
+    </div>
+  </form>
+
+</section>

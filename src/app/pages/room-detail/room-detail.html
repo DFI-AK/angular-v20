@@ -1,0 +1,175 @@
+<div class="w-full h-auto py-[16px]">
+  <p-galleria [value]="room()?.images" [responsiveOptions]="responsiveOptions" [showIndicators]="false"
+              [showItemNavigatorsOnHover]="false" [showItemNavigators]="true" [containerStyle]="{ 'height': '269px' }">
+    <ng-template #item let-item>
+      <img [src]="item" [alt]="room()?.title" class="w-full h-[269px]"/>
+    </ng-template>
+  </p-galleria>
+
+  <div class="container my-lg">
+    <!--Title and room description-->
+    <div class="w-full mb-[28px]">
+      <div class="flex justify-between items-center mb-[16px]">
+        <p class="font-semibold text-lg">{{ room()?.title }}</p>
+        <p-button text icon="pi pi-heart" [rounded]="true" severity="contrast"/>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <div class="flex flex-col gap-y-2 w-[169px]">
+          <div class="flex items-center gap-x-1">
+            <i class="pi pi-star-fill text-amber-400!"></i>
+            <span class="text-sm">4.7</span>
+          </div>
+          <div class="flex items-center gap-x-1 text-slate-500">
+            <i class="pi pi-map-marker"></i>
+            <span>{{ room()?.address?.city }}</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-y-2 w-[169px] text-slate-500">
+          <div class="flex items-center gap-x-1">
+            <span class="material-symbols-outlined">single_bed</span>
+            <span>{{ room()?.bedRooms }} room</span>
+          </div>
+
+          <div class="flex items-center gap-x-1">
+            <span class="material-symbols-outlined text-lg!">{{ room()?.hasWifi ? 'wifi' : 'wifi_off' }}</span>
+            <span>{{ room()?.hasWifi ? 'Wifi' : 'No wifi' }}</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p-divider/>
+
+    <div class="mt-[28px] w-full">
+      <!--Property owner-->
+      <div class="w-full flex justify-between items-center mb-[36px]">
+        <div class="w-full">
+          <div class="flex items-center w-full text-sm gap-x-2">
+            <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle"
+                      size="large"/>
+            <div class="text-sm">
+              <p>Louise Vuitton</p>
+              <p class="text-slate-500 text-[12px]">Property owner</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center gap-x-3 w-[94px]">
+          <button type="button" pButton class="h-[40px] w-[40px] shadow-md shadow-slate-200 rounded-xl!" text
+                  severity="contrast">
+            <i class="pi pi-comments text-slate-500" pButtonIcon></i>
+          </button>
+
+          <button type="button" pButton class="h-[40px] w-[40px] shadow-md shadow-slate-200 rounded-xl!" text
+                  severity="contrast">
+            <i class="pi pi-phone text-slate-500" pButtonIcon></i>
+          </button>
+        </div>
+      </div>
+
+      <!--Home facilities-->
+      <div class="w-full mb-10">
+        <div class="flex justify-between items-center mb-[20px]">
+          <p class="font-semibold text-lg">Home facilities</p>
+          <a [routerLink]="['facilities']" class="text-sm text-primary">See all facilities</a>
+        </div>
+
+        <ul>
+          <li class="flex flex-row items-center gap-x-2 text-slate-500 mb-[20px]">
+            <span class="material-symbols-outlined">ac_unit</span>
+            <span>Air conditioning</span>
+          </li>
+          <li class="flex flex-row items-center gap-x-2 text-slate-500 mb-[20px]">
+            <span class="material-symbols-outlined">kitchen</span>
+            <span>Kitchen</span>
+          </li>
+          <li class="flex flex-row items-center gap-x-2 text-slate-500 mb-[20px]">
+            <span class="material-symbols-outlined">directions_car</span>
+            <span>Free parking</span>
+          </li>
+          <li class="flex flex-row items-center gap-x-2 text-slate-500 mb-[20px]">
+            <span class="material-symbols-outlined">wifi</span>
+            <span>Free Wifi</span>
+          </li>
+        </ul>
+      </div>
+
+      <!--Map section-->
+      <div class="w-full mb-10">
+        <p class="text-lg font-semibold mb-4">Nearest public facilities</p>
+        <div class="w-full flex items-center justify-between">
+          <div class="flex flex-col gap-y-2">
+            <div class="flex gap-x-4 items-start flex-row text-slate-500">
+              <span class="material-symbols-outlined">shopping_cart</span>
+              <div>
+                <p class="font-semibold text-sm text-slate-900">Mini market</p>
+                <span class="text-sm">200m</span>
+              </div>
+            </div>
+
+            <div class="flex gap-x-4 items-start flex-row text-slate-500">
+              <span class="material-symbols-outlined">restaurant</span>
+              <div>
+                <p class="font-semibold text-sm text-slate-900">Restaurant</p>
+                <span class="text-sm">200m</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-y-2 w-[125px]">
+            <div class="flex gap-x-4 items-start flex-row text-slate-500">
+              <span class="material-symbols-outlined">local_hospital</span>
+              <div>
+                <p class="font-semibold text-sm text-slate-900">Hospital</p>
+                <span class="text-sm">200m</span>
+              </div>
+            </div>
+
+            <div class="flex gap-x-4 items-start flex-row text-slate-500">
+              <span class="material-symbols-outlined">train</span>
+              <div>
+                <p class="font-semibold text-sm text-slate-900">Station</p>
+                <span class="text-sm">200m</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--About room-->
+      <div class="w-full mb-8">
+        <p class="font-semibold text-lg mb-5">About locations's neighborhood</p>
+        <p class="text-slate-500">
+          This cabin comes with Smart Home System and beautiful viking style. You can see sunrise in the morning with
+          City View from full Glass Window.
+
+          This unit is surrounded by business district of West Surabaya that offers you the city life as well as wide
+          range of culinary.
+
+          This apartment equipped with Washing Machine, Electric Stove, Microwave, Refrigerator, Cutlery.
+        </p>
+      </div>
+
+      <div
+        class="w-full h-[46px] rounded-full border border-slate-300 mb-10 flex items-center justify-between py-[15px] px-[21px]">
+        <span class="text-slate-500 text-sm">Average living cost</span>
+        <span class="text-sm">{{ 500 | currency:"INR" }}/month</span>
+      </div>
+
+      <div class="w-full h-[108px] mb-10">
+        <div class="flex justify-between items-center mb-[28px]">
+          <div class="flex flex-col justify-start">
+            <p>{{ room()?.rent | currency:"INR" }}<span class="text-sm text-slate-500">/month</span></p>
+            <p class="text-[12px] underline">Payment estimation</p>
+          </div>
+          <a type="button" pButton severity="primary" size="large" [rounded]="true"
+                  class="w-[156px] h-[46px] hover:shadow-lg hover:shadow-primary/75" [routerLink]="['booking']">Rent
+            it
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
